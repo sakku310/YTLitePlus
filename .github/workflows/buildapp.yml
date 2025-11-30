@@ -64,7 +64,7 @@ jobs:
         with:
           path: main
           ref: ${{ github.event.inputs.commit_id || github.ref }}
-          submodules: false
+          submodules: recursive
 
       - name: Install Dependencies
         run: brew install ldid dpkg make
