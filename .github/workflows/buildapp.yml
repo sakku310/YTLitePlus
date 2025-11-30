@@ -64,7 +64,10 @@ jobs:
         with:
           path: main
           ref: ${{ github.event.inputs.commit_id || github.ref }}
-          submodules: recursive
+          submodules: false
+                - name: Download FLEX
+        run: |
+          git clone https://github.com/FLEXTool/FLEX.git main/Tweaks/FLEX
 
       - name: Install Dependencies
         run: brew install ldid dpkg make
